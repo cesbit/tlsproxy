@@ -18,12 +18,15 @@ RUN CGO_ENABLED=0 GOOS=linux go build -o /tlsproxy
 
 # Expose (accept client connections)
 EXPOSE 443
-EXPOSE 9200
+EXPOSE 8000
 
 ENV TLSPROXY_TARGET "localhost"
-ENV TLSPROXY_PORTS "443:80"
-ENV TLSPROXY_CERT_FILE "server.crt"
-ENV TLSPROXY_KEY_FILE "server.key"
+ENV TLSPROXY_PORTS "443:80,8000"
+ENV TLSPROXY_CERT_FILE "certificates/server.crt"
+ENV TLSPROXY_KEY_FILE "certificates/server.key"
+
+VOLUME "/certificates"
 
 # Run
+WORKDIR /
 CMD ["/tlsproxy"]

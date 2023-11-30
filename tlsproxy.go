@@ -24,6 +24,7 @@ import (
 	"net/http"
 	"os"
 	"os/signal"
+	"path/filepath"
 	"regexp"
 	"strconv"
 	"strings"
@@ -133,13 +134,13 @@ func main() {
 	certFileEnv := os.Getenv("TLSPROXY_CERT_FILE")
 	if certFileEnv == "" {
 		log.Println("Missing or empty TLSPROXY_CERT_FILE, using 'server.crt' as default value")
-		certFileEnv = "server.crt"
+		certFileEnv = filepath.Join("certificates", "server.crt")
 	}
 
 	keyFileEnv := os.Getenv("TLSPROXY_KEY_FILE")
 	if keyFileEnv == "" {
 		log.Println("Missing or empty TLSPROXY_KEY_FILE, using 'server.key' as default value")
-		keyFileEnv = "server.key"
+		keyFileEnv = filepath.Join("certificates", "server.key")
 	}
 
 	r := regexp.MustCompile(`([0-9]+)(:([0-9]+))?`)
