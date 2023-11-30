@@ -21,7 +21,6 @@ import (
 	"io"
 	"log"
 	"net"
-	"net/http"
 	"os"
 	"os/signal"
 	"path/filepath"
@@ -103,13 +102,6 @@ func startSocket(clientPort int, targetPort int, certFile string, keyFile string
 			continue
 		}
 		go handleConnection(conn, targetPort)
-	}
-}
-
-func startHttps(httpsPort int, certFile string, keyFile string) {
-	err := http.ListenAndServeTLS(fmt.Sprintf(":%d", httpsPort), certFile, keyFile, nil)
-	if err != nil {
-		log.Fatal(err)
 	}
 }
 

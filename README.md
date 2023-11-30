@@ -1,3 +1,4 @@
+[![CI](https://github.com/cesbit/tlsproxy/workflows/CI/badge.svg)](https://github.com/cesbit/tlsproxy/actions)
 [![Release Version](https://img.shields.io/github/release/cesbit/tlsproxy)](https://github.com/cesbit/tlsproxy/releases)
 
 # TLS Proxy
