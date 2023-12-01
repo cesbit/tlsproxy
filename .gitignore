@@ -1,2 +1,5 @@
 # Test build
 tlsproxy
+
+# Certificates
+certificates/
