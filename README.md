@@ -30,7 +30,7 @@ tlsproxy
 Environment             | Description
 ----------------------- | -----------
 `TLSPROXY_TARGET`       | Address of the host.
-`TLSPROXY_PORTS`        | The ports you want to listen to with TLS. Multiple ports are allowed using a comma as separator with the following syntax: `<outside>:<inside>` _(example `443:80`)_ or `<same-auto-side-inside>` _(example `8000`)_.
+`TLSPROXY_PORTS`        | Specify the ports you want to secure with TLS. You can list multiple ports separated by commas. Use the following syntax: `<outside>:<inside>` _(example `443:80`)_. If the outside and inside ports are the same, you can simply specify the port number _(example `8000`)_.
 `TLSPROXY_CERT_FILE`    | Path to the certificate file _(example `/certs/server.crt`)_.
 `TLSPROXY_KEY_FILE`     | Path to the key file _(example `/certs/server.key`)_.
 
