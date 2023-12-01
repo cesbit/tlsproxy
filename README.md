@@ -33,7 +33,7 @@ Environment             | Description
 `TLSPROXY_PORTS`        | Specify the ports you want to secure with TLS. You can list multiple ports separated by commas. Use the following syntax: `<outside>:<inside>` _(example `443:80`)_. If the outside and inside ports are the same, you can simply specify the port number _(example `8000`)_.
 `TLSPROXY_CERT_FILE`    | Path to the certificate file _(example `/certs/server.crt`)_.
 `TLSPROXY_KEY_FILE`     | Path to the key file _(example `/certs/server.key`)_.
-
+`TLSPROXY_DEBUG`        | A value of `1` or `enable` will enable debug logging.
 ## Certificates
 
 For testing, one can create certificates using the following commands:
